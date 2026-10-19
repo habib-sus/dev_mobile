@@ -1,17 +1,20 @@
-import { StyleSheet, View, Image, FlatList } from "react-native";
+import { StyleSheet, View, Image, FlatList, Pressable } from "react-native";
 import products from "../data/products";
 
-const ProductScreen = () => {
+const ProductScreen = ({ onSelectProduct }) => {
   return (
     <FlatList
       data={products}
       renderItem={({ item }) => (
-        <View style={styles.itemContainer}>
+        <Pressable
+          onPress={() => onSelectProduct && onSelectProduct(item)}
+          style={styles.itemContainer}
+        >
           <Image
             source={{ uri: item.image }}
             style={styles.image}
           />
-        </View>
+        </Pressable>
       )}
       numColumns={2}
       keyExtractor={(item) => item.id}
