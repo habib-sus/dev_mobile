@@ -14,6 +14,7 @@ const ProductScreen = () => {
         </View>
       )}
       numColumns={2}
+      keyExtractor={(item) => item.id}
     />
   );
 };
