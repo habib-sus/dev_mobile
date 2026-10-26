@@ -13,6 +13,10 @@ import products from "../data/products";
 const ProductDetailsScreen = ({ product = products[0], onBack }) => {
   const { width } = useWindowDimensions();
 
+  const addToCart = () => {
+    console.warn("add to cart");
+  };
+
   return (
     <View style={{ flex: 1 }}>
       {onBack && (
@@ -37,8 +41,8 @@ const ProductDetailsScreen = ({ product = products[0], onBack }) => {
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Ajouter au panier</Text>
+      <Pressable onPress={addToCart} style={styles.button}>
+        <Text style={styles.buttonText}>Add to cart</Text>
       </Pressable>
     </View>
   );

@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, FlatList, Pressable } from "react-native";
+import { StyleSheet, Image, FlatList, Pressable } from "react-native";
 import products from "../data/products";
 
 const ProductScreen = ({ onSelectProduct }) => {
